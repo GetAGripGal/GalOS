@@ -1,0 +1,1 @@
+qemu-system-i386 -drive format=raw,file=./bin/galos-i386.iso -m 512M -serial stdio -d int --no-reboot

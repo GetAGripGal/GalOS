@@ -3,14 +3,20 @@ ENTRY(start)
 SECTIONS
 {
     . = 0x100000;
-    .multiboot : { KEEP(*(.multiboot)) }
+    .multiboot2 : { 
+        KEEP(*(.multiboot2))
+        . = ALIGN(4);
+    }
     .text : { *(.text) }
     .data : { *(.data) }
-    .bss  : { *(.bss), *(COMMON) }
+    .bss  : { 
+        *(.bss)
+        *(COMMON) 
+    }
     .bss.stack (NOLOAD) : {
         . = ALIGN(16);
         stack_space = .;
-        resb 8192;
+        resb 32768;
     }
     .rodata : { *(.rodata) }
 }

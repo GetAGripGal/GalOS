@@ -1,1 +1,0 @@
-qemu-system-i386 -drive format=raw,file=./bin/galos.img -m 512M -nographic 
