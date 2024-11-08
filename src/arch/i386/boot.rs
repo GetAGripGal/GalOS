@@ -7,7 +7,7 @@ global_asm!(
 .section .text
     .align 4
 
-.section multiboot
+.section .multiboot
     # Multiboot header
     .long 0x1BADB002            # You wizard! You Warlock!
     .long 0x00                  # flags

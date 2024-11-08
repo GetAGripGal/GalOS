@@ -3,10 +3,7 @@ ENTRY(start)
 SECTIONS
 {
     . = 0x100000;
-    .multiboot2 : { 
-        KEEP(*(.multiboot2))
-        . = ALIGN(4);
-    }
+    .multiboot : { *(.multiboot) }
     .text : { *(.text) }
     .data : { *(.data) }
     .bss  : { 
